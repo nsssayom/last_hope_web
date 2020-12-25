@@ -1,165 +1,214 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-  </head>
-  <body>
-  <section class="section">
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="https://victim.live">
-            <img src="./assets/images/logo.png" width="129" height="31">
-          </a>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-      
-        <div id="navbarBasic" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item">
-              Home
-            </a>
-      
-            <a class="navbar-item">
-              Documentation
-            </a>
-      
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                More
-              </a>
-      
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  About
-                </a>
-                <a class="navbar-item">
-                  Jobs
-                </a>
-                <a class="navbar-item">
-                  Contact
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  Report an issue
-                </a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-primary">
-                  <strong>Sign up</strong>
-                </a>
-                <a class="button is-light">
-                  Log in
-                </a>
-              </div>
-            </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Last Hope Console</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  <!-- Including jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./js/index.js"></script>
+
+  <!-- <script src = "./js/modules/smsauth.js"></script> -->
+</head>
+
+<body>
+  <!-- Navbar starting from here-->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://victim.live">
+        <img src="./assets/images/logo.png" width="129" height="31" />
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasic" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item"> Home </a>
+
+        <a class="navbar-item"> Documentation </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link"> More </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item"> About </a>
+            <a class="navbar-item"> Jobs </a>
+            <a class="navbar-item"> Contact </a>
+            <hr class="navbar-divider" />
+            <a class="navbar-item"> Report an issue </a>
           </div>
         </div>
-      </nav>
-    
-    
-    
-    
-    
-    
-    
-    
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light"> Log in </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Navbar ends from here-->
+
+  <div class="container is-fluid">
+    <!-- Form fields starts here-->
+
+    <h1 class="title">User Registration</h1>
+
     <div class="field">
-        <label class="label">Name</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="Text input">
+      <label class="label">Select user's ID Type: </label>
+      <div class="control">
+        <div class="select">
+          <select id="id_type">
+            <option value="1">NID</option>
+            <option value="2">Birth Certificate</option>
+            <option value="3">Passport</option>
+          </select>
         </div>
       </div>
-      
-      <div class="field">
-        <label class="label">Username</label>
-        <div class="control has-icons-left has-icons-right">
-          <input class="input is-success" type="text" placeholder="Text input" value="bulma">
-          <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
-          </span>
-        </div>
-        <p class="help is-success">This username is available</p>
+    </div>
+
+    <div class="field">
+      <label class="label">ID number (as appears in user's ID)</label>
+      <div class="control has-icons-right">
+        <!-- append "is-danger" or "is-success" to class-->
+        <input class="input" type="text" placeholder="BD0123456" id="id_number" />
+        <!-- <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+              <i class="fas fa-exclamation-triangle"></i>
+            </span> -->
       </div>
-      
-      <div class="field">
-        <label class="label">Email</label>
-        <div class="control has-icons-left has-icons-right">
-          <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-exclamation-triangle"></i>
-          </span>
-        </div>
-        <p class="help is-danger">This email is invalid</p>
+      <!-- append "is-danger" or "is-success" to class-->
+      <!-- Modify innerHTML to display help message-->
+      <p class="help" id="id-number-help"></p>
+    </div>
+
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control has-icons-right">
+        <input class="input alpha-only" type="text" placeholder="As appears in user's ID" id="name" />
       </div>
-      
-      <div class="field">
-        <label class="label">Subject</label>
-        <div class="control">
-          <div class="select">
-            <select>
-              <option>Select dropdown</option>
-              <option>With options</option>
-            </select>
-          </div>
-        </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control has-icons-right">
+        <!-- append "is-danger" or "is-success" to class-->
+        <input class="input" type="email" placeholder="user@domain.com" id="email" />
+        <!-- <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+              <i class="fas fa-exclamation-triangle"></i>
+            </span> -->
       </div>
-      
-      <div class="field">
-        <label class="label">Message</label>
-        <div class="control">
-          <textarea class="textarea" placeholder="Textarea"></textarea>
-        </div>
+      <!-- append "is-danger" or "is-success" to class-->
+      <!-- Modify innerHTML to display help message-->
+      <p class="help" id="email-help"></p>
+    </div>
+
+    <div class="field">
+      <label class="label">Phone</label>
+      <div class="control has-icons-right">
+        <!-- append "is-danger" or "is-success" to class-->
+        <input class="input" type="tel" placeholder="+8801XXXXXXXXX" id="phone" />
+        <!-- <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+              <i class="fas fa-exclamation-triangle"></i>
+            </span> -->
       </div>
-      
-      <div class="field">
-        <div class="control">
-          <label class="checkbox">
-            <input type="checkbox">
-            I agree to the <a href="#">terms and conditions</a>
-          </label>
-        </div>
-      </div>
-      
-      <div class="field">
-        <div class="control">
-          <label class="radio">
-            <input type="radio" name="question">
-            Yes
-          </label>
-          <label class="radio">
-            <input type="radio" name="question">
-            No
-          </label>
+      <!-- append "is-danger" or "is-success" to class-->
+      <!-- Modify innerHTML to display help message-->
+      <p class="help" id="phone-help"></p>
+    </div>
+
+    <div class="field">
+      <label class="label">Select user role: </label>
+      <div class="control">
+        <div class="select">
+          <select id="user_level">
+            <option value="1">System Admin</option>
+            <option value="2">System Manager</option>
+            <option value="3">Academic Access</option>
+          </select>
         </div>
       </div>
-      
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-link">Submit</button>
-        </div>
-        <div class="control">
-          <button class="button is-link is-light">Cancel</button>
-        </div>
+    </div>
+
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link" id="submit-button" onclick="onSubmitButton()">
+          Submit
+        </button>
       </div>
-  </section>
-  </body>
+      <div class="control">
+        <button class="button is-link is-light" id="cancel-button">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- OTP modal-->
+
+  <div class="modal" id="otp-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Enter OTP Code recieved via SMS</p>
+        <button class="delete otp-modal-closer" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <!-- Content ... -->
+        <input class="input" type="number" placeholder=" OTP Code" />
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success" id="otp-modal-submit">Submit</button>
+        <button class="button" id="otp-modal-resend">Resend Code</button>
+        <button class="button is-danger otp-modal-closer" id="otp-modal-cancel">Cancel</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Add the latest firebase dependecies from CDN -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyBmLubowu1cfWrSDvW8jRhERAe8KzRc6UE",
+      authDomain: "last-hope-7abd2.firebaseapp.com",
+      projectId: "last-hope-7abd2",
+      storageBucket: "last-hope-7abd2.appspot.com",
+      messagingSenderId: "548371008238",
+      appId: "1:548371008238:web:59f6d17f804424e53241ff",
+      measurementId: "G-Q9N3WK5DY1",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.auth().languageCode = 'en';
+    // Create a Recaptcha verifier instance globally
+    // Calls submitPhoneNumberAuth() when the captcha is verified
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('submit-button', {
+      'size': 'invisible',
+      'callback': (response) => {
+        onSubmitButton();
+      }
+    });
+  </script>
+</body>
+
 </html>

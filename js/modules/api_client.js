@@ -5,21 +5,26 @@ var settings = {
     "headers": {
         "Content-Type": "application/json"
     },
-    "data": null,
     "success": null,
     "error": null
 };
 
 
-export function callAPI(endpoint, method, data, successCallBack, errorCallBack) {
+export function callAPI(endpoint, method, data = null, successCallBack, errorCallBack) {
     settings["url"] = "http://victim.live:3000/" + endpoint;
     settings['method'] = method;
-    settings['data'] = JSON.stringify(data);
-    console.log (data);
-    settings['success'] = function (data, textStatus, jqXHR){
+
+    if (! data) {}
+    else{
+        settings['data'] = JSON.stringify(data);
+        console.log("NULL");
+    }
+
+    console.log(data);
+    settings['success'] = function (data, textStatus, jqXHR) {
         successCallBack(data, textStatus, jqXHR);
     }
-    settings['error'] = function (jqXHR, textStatus, errorThrown){
+    settings['error'] = function (jqXHR, textStatus, errorThrown) {
         errorCallBack(errorThrown, textStatus, jqXHR);
     }
 

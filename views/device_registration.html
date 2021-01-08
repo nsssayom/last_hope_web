@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Last Hope Console</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  <!-- Including jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./../js/device_reg.js"></script>
+  <script src="./../js/main.js"></script>
+
+</head>
+
+<body>
+  <div class="container is-fluid">
+    <!-- Form fields starts here-->
+
+    <h1 class="title">Device Registration</h1>
+
+    <div class="field">
+      <label class="label">Select user's ID Type: </label>
+      <div class="control">
+        <div class="select">
+          <select id="id_type">
+            <option value="1">NID</option>
+            <option value="2">Birth Certificate</option>
+            <option value="3">Passport</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">ID number (as appears in user's ID)</label>
+      <div class="control has-icons-right">
+        <!-- append "is-danger" or "is-success" to class-->
+        <input class="input" type="text" placeholder="BD0123456" id="id_number" />
+        <!-- <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+              <i class="fas fa-exclamation-triangle"></i>
+            </span> -->
+      </div>
+      <!-- append "is-danger" or "is-success" to class-->
+      <!-- Modify innerHTML to display help message-->
+      <p class="help" id="id-number-help"></p>
+    </div>
+
+    <div class="field">
+      <label class="label">GSM module IMEI number</label>
+      <div class="control has-icons-right">
+        <input class="input" type="number" placeholder="1234567890" id="gsm_imei" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">GSM Module MSISDN number</label>
+      <div class="control has-icons-right">
+        <!-- append "is-danger" or "is-success" to class-->
+        <input class="input" type="tel" placeholder="+880XXXXXXXXXX" id="gsm_msisdn" />
+        <!-- <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+              <i class="fas fa-exclamation-triangle"></i>
+            </span> -->
+      </div>
+      <!-- append "is-danger" or "is-success" to class-->
+      <!-- Modify innerHTML to display help message-->
+      <p class="help" id="msisdn-help"></p>
+    </div>
+
+    <div class="field">
+      <label class="label">Select area code: </label>
+      <div class="control">
+        <div class="select">
+          <select id="area_code">
+            <option value="000">000</option>
+            <option value="001">001</option>
+            <option value="002">002</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link" id="submit-button" onclick="onSubmitButton()">
+          Submit
+        </button>
+      </div>
+      <div class="control">
+        <button class="button is-link is-light" id="cancel-button">
+          Cancel
+        </button>
+      </div>
+    </div>
+
+    <div class="notification is-success" id="created-notification" style="display: none;">
+      <button class="delete" id="btn-success-delete"></button>
+      User created successfully!
+    </div>
+
+    <div class="notification is-danger" id="failed-notification" style="display: none;">
+      <button class="delete" id="btn-failed-delete"></button>
+      Failed to create user!
+    </div>
+
+  </div>
+</body>
+
+</html>

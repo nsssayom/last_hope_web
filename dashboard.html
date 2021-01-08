@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Last Hope Console</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+  <link rel="stylesheet" href="./css/dashboard.css" />
+
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  <!-- Including jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./js/login.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/dashboard.js"></script>
+
+  <!-- <script src = "./js/modules/smsauth.js"></script> -->
+</head>
+
+<body>
+  <!-- Navbar starting from here-->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://victim.live">
+        <img src="./assets/images/logo.png" width="129" height="31" />
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasic" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item"> Home </a>
+
+        <a class="navbar-item"> Documentation </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link"> More </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item"> About </a>
+            <a class="navbar-item"> Jobs </a>
+            <a class="navbar-item"> Contact </a>
+            <hr class="navbar-divider" />
+            <a class="navbar-item"> Report an issue </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-light"> Log in </a>
+                    </div>
+                </div>
+            </div> -->
+    </div>
+  </nav>
+  <!-- Navbar ends from here-->
+  <div class="container is-fluid">
+    <div class="columns">
+      <div class="column is-one-fifth">
+        <!-- Left Panel Starts -->
+        <aside class="menu">
+          <p class="menu-label">
+            General
+          </p>
+          <ul class="menu-list">
+            <li><a class="menu-btn is-active" id="btn-dashboard">Dashboard</a></li>
+          </ul>
+          <p class="menu-label">
+            Disasters
+          </p>
+          <ul class="menu-list">
+            <li><a class="menu-btn" id="btn-on-going">On-going disasters</a></li>
+            <li><a class="menu-btn" id="btn-warnings">Warnings</a></li>
+            <li><a class="menu-btn" id="btn-create-warning">Create new warning</a></li>
+          </ul>
+          <p class="menu-label">
+            Users
+          </p>
+          <ul class="menu-list">
+            <li><a class="menu-btn" id="btn-view-users">View all users</a></li>
+            <li><a class="menu-btn" id="btn-add-user">Add new user</a></li>
+          </ul>
+          <p class="menu-label">
+            Devices
+          </p>
+          <ul class="menu-list">
+            <li><a class="menu-btn" id="btn-view-devices">View all devices</a></li>
+            <li><a class="menu-btn" id="btn-add-device">Add new device</a></li>
+          </ul>
+        </aside>
+        <!-- Left Panel Ends -->
+      </div>
+      <div class="column auto">
+        <!-- <iframe id="content-frame" src="./views/user_registration.html" scrolling="no" frameborder="0"> </iframe> -->
+        <div id="content">
+          <!-- 
+                             iframes will be loaded here
+                        -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -11,61 +11,13 @@
 
   <!-- Including jQuery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="./js/user_reg.js"></script>
-  <script src="./js/main.js"></script>
+  <script src="./../js/user_reg.js"></script>
+  <script src="./../js/main.js"></script>
 
   <!-- <script src = "./js/modules/smsauth.js"></script> -->
 </head>
 
 <body>
-  <!-- Navbar starting from here-->
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="https://victim.live">
-        <img src="./assets/images/logo.png" width="129" height="31" />
-      </a>
-
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-
-    <div id="navbarBasic" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item"> Home </a>
-
-        <a class="navbar-item"> Documentation </a>
-
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link"> More </a>
-
-          <div class="navbar-dropdown">
-            <a class="navbar-item"> About </a>
-            <a class="navbar-item"> Jobs </a>
-            <a class="navbar-item"> Contact </a>
-            <hr class="navbar-divider" />
-            <a class="navbar-item"> Report an issue </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary">
-              <strong>Sign up</strong>
-            </a>
-            <a class="button is-light"> Log in </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Navbar ends from here-->
-
   <div class="container is-fluid">
     <!-- Form fields starts here-->
 
@@ -161,55 +113,18 @@
         </button>
       </div>
     </div>
-  </div>
 
-  <!-- OTP modal-->
-
-  <div class="modal" id="otp-modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Enter OTP Code recieved via SMS</p>
-        <button class="delete otp-modal-closer" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <!-- Content ... -->
-        <input class="input" type="number" placeholder=" OTP Code" />
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success" id="otp-modal-submit">Submit</button>
-        <button class="button" id="otp-modal-resend">Resend Code</button>
-        <button class="button is-danger otp-modal-closer" id="otp-modal-cancel">Cancel</button>
-      </footer>
+    <div class="notification is-success" id="created-notification" style="display: none;">
+      <button class="delete" id="btn-success-delete"></button>
+      User created successfully!
     </div>
+
+    <div class="notification is-danger" id="failed-notification" style="display: none;">
+      <button class="delete" id="btn-failed-delete"></button>
+      Failed to create user!
+    </div>
+
   </div>
-
-  <!-- Add the latest firebase dependecies from CDN -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
-
-  <script>
-    var firebaseConfig = {
-      apiKey: "AIzaSyBmLubowu1cfWrSDvW8jRhERAe8KzRc6UE",
-      authDomain: "last-hope-7abd2.firebaseapp.com",
-      projectId: "last-hope-7abd2",
-      storageBucket: "last-hope-7abd2.appspot.com",
-      messagingSenderId: "548371008238",
-      appId: "1:548371008238:web:59f6d17f804424e53241ff",
-      measurementId: "G-Q9N3WK5DY1",
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.auth().languageCode = 'en';
-    // Create a Recaptcha verifier instance globally
-    // Calls submitPhoneNumberAuth() when the captcha is verified
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('submit-button', {
-      'size': 'invisible',
-      'callback': (response) => {
-        onSubmitButton();
-      }
-    });
-  </script>
 </body>
 
 </html>

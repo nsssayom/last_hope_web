@@ -100,9 +100,6 @@ function onAuthSubmit() {
 			console.log(error);
 		});
 
-		//var credential = firebase.auth.PhoneAuthProvider.credential(confirmationResult.verificationId, code);
-		//firebase.auth().signInWithCredential(credential);
-
 	}).catch((error) => {
 		$("#phone").empty();
 		$("#phone-help").empty();

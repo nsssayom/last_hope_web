@@ -14,8 +14,8 @@ export function callAPI(endpoint, method, data = null, successCallBack, errorCal
     settings["url"] = "http://192.168.31.200:3000/" + endpoint;
     settings['method'] = method;
 
-    if (! data) {}
-    else{
+    if (!data) { }
+    else {
         settings['data'] = JSON.stringify(data);
     }
 
@@ -23,7 +23,7 @@ export function callAPI(endpoint, method, data = null, successCallBack, errorCal
     settings['success'] = function (data, textStatus, jqXHR) {
         successCallBack(data, textStatus, jqXHR);
     }
-    
+
     settings['error'] = function (jqXHR, textStatus, errorThrown) {
         errorCallBack(errorThrown, textStatus, jqXHR);
     }

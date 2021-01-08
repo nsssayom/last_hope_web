@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Last Hope Console</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  <!-- Including jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./../js/new_warning.js"></script>
+  <script src="./../js/main.js"></script>
+</head>
+
+<body>
+  <div class="container is-fluid">
+    <!-- Form fields starts here-->
+
+    <h1 class="title">issue New Warning</h1>
+
+    <div class="field">
+      <label class="label">Warning Title</label>
+      <div class="control has-icons-right">
+        <input class="input" type="text" placeholder="Name of the Disaster" id="warning_title" />
+      </div>
+    </div>
+
+
+    <div class="field">
+      <label class="label">Select area code: </label>
+      <div class="control">
+        <div class="select">
+          <select id="area_code">
+            <option value="000">000</option>
+            <option value="001">001</option>
+            <option value="002">002</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Estimated Time of Arrival</label>
+      <input type="datetime-local" id="eta" name="eta">
+    </div>
+
+    <div class="field">
+      <label class="label">Estimated Time of Departure</label>
+      <div class="control">
+        <input type="datetime-local" id="eta_over" name="eta_over">
+      </div>
+    </div>
+
+
+    <div class="field is-grouped mt-5">
+      <div class="control">
+        <button class="button is-link" id="submit-button" onclick="onSubmitButton()">
+          Submit
+        </button>
+      </div>
+      <div class="control">
+        <button class="button is-link is-light" id="cancel-button">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="notification is-success" id="created-notification" style="display: none;">
+    <button class="delete" id="btn-success-delete"></button>
+    Warning issued successfully!
+  </div>
+
+  <div class="notification is-danger" id="failed-notification" style="display: none;">
+    <button class="delete" id="btn-failed-delete"></button>
+    Failed to issue warning!
+  </div>
+
+  </div>
+</body>
+
+</html>

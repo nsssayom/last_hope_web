@@ -11,7 +11,7 @@ var settings = {
 
 
 export function callAPI(endpoint, method, data = null, successCallBack, errorCallBack) {
-    settings["url"] = "http://192.168.31.200:3000/" + endpoint;
+    settings["url"] = "http://victim.live:3000/" + endpoint;
     settings['method'] = method;
 
     if (!data) { }

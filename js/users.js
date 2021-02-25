@@ -1,23 +1,23 @@
 $(document).ready(function () {
     import("./modules/api_client.js").then((api_client) => {
         api_client.callAPI(
-            "updates",
+            "users",
             "GET",
             null,
             function (data, textStatus, jqXHR) {
                 console.log(jqXHR.status + " : " + textStatus);
                 data.forEach(element => {
-                    $("#update-container")
+                    $("#users-container")
                         .append(`<tr> 
-                                <td> ${element['user_id']} </td> 
-                                <td> ${element['long']} </td>
-                                <td> ${element['lat']} </td>
-                                <td> ${element['heart_rate']} </td>
-                                <td> ${element['updated_on']} </td>
+                                <td> ${element['id']} </td> 
+                                <td> ${element['id_number']} </td>
+                                <td> ${element['name']} </td>
+                                <td> ${element['email']} </td>
+                                <td> ${element['phone']} </td>
                                 <td class="has-text-centered">
-                                    <button class="button is-success" id="btn-map" onclick="showMap(${element['long']}, ${element['lat']})">
+                                    <button class="button is-danger" id="btn-map">
                                         <span class="icon is-small">
-                                            <i class="fas fa-location-arrow"></i>
+                                            <i class="fas fa-trash"></i>
                                         </span>
                                     </button>
                                 </td>

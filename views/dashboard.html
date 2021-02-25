@@ -12,7 +12,6 @@
     <!-- Including jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./../js/updates.js"></script>
-
 </head>
 
 <body>
@@ -26,9 +25,10 @@
                     <th>Latitude</th>
                     <th>Heart rate</th>
                     <th>Last update on</th>
+                    <th>Show on map</th>
                 </tr>
             </thead>
-            <tfoot>
+            <!-- <tfoot>
                 <tr>
                     <th>User ID</th>
                     <th>Longitude</th>
@@ -36,12 +36,37 @@
                     <th>Heart rate</th>
                     <th>Last update on</th>
                 </tr>
-            </tfoot>
+            </tfoot> -->
             <tbody id="update-container">
-                
+
             </tbody>
         </table>
+        <div id="mapdiv" style="width:880px; height:350px;"> </div>
     </div>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script>
+
+        function showMap(long, lat) {
+            $( "#mapdiv" ).empty();
+            map = new OpenLayers.Map("mapdiv");
+            map.addLayer(new OpenLayers.Layer.OSM());
+            
+            var lonLat = new OpenLayers.LonLat(long, lat)
+                .transform(
+                    new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                    map.getProjectionObject() // to Spherical Mercator Projection
+                );
+
+            var zoom = 17;
+
+            var markers = new OpenLayers.Layer.Markers("Markers");
+            map.addLayer(markers);
+
+            markers.addMarker(new OpenLayers.Marker(lonLat));
+
+            map.setCenter(lonLat, zoom);
+        }
+    </script>
 </body>
 
 </html>

@@ -44,11 +44,31 @@ $(document).ready(function () {
 					scrolling: "no",
 				}).appendTo("#content");
 				break;
-			
+
 			case "btn-create-warning":
 				$('#content').empty();
 				$("<iframe>", {
 					src: "./views/new_warning.html",
+					id: "content-frame",
+					frameborder: 0,
+					scrolling: "no",
+				}).appendTo("#content");
+				break;
+
+			case "btn-view-users":
+				$('#content').empty();
+				$("<iframe>", {
+					src: "./views/users.html",
+					id: "content-frame",
+					frameborder: 0,
+					scrolling: "no",
+				}).appendTo("#content");
+				break;
+
+			case "btn-view-devices":
+				$('#content').empty();
+				$("<iframe>", {
+					src: "./views/devices.html",
 					id: "content-frame",
 					frameborder: 0,
 					scrolling: "no",

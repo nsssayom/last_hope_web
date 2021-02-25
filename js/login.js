@@ -86,7 +86,7 @@ function onAuthSubmit() {
 							import ('./modules/api_client').then((setCookie) => {
 								setCookie("token", idToken, 1);
 							});
-							window.location.replace ('http://192.168.31.200/dashboard.html');
+							window.location.replace ('http://victim.live/dashboard.html');
 						}
 					},
 					// API call failed
